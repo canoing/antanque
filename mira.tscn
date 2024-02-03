@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://crvh6m0py4fgu"]
+
+[ext_resource type="Texture2D" path="res://Mira.png" id="1_2eq1g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yebb"]
+atlas = ExtResource("1_2eq1g")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlunu"]
+atlas = ExtResource("1_2eq1g")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c4k3l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yebb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlunu")
+}],
+"loop": true,
+"name": &"carga",
+"speed": 5.0
+}]
+
+[node name="mira" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c4k3l")
+animation = &"carga"

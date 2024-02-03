@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvtne6vr0fiyu"]
+
+[ext_resource type="Script" path="res://momen.gd" id="1_xl6b4"]
+
+[node name="momen" type="Node"]
+script = ExtResource("1_xl6b4")

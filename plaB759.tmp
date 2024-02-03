@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2qmq8wpcymwa"]
+
+[ext_resource type="Texture2D" uid="uid://bpimmmijb1l5a" path="res://Cuerpo.png" id="1_4j2g4"]
+[ext_resource type="Script" path="res://player.gd" id="1_65mgm"]
+[ext_resource type="PackedScene" uid="uid://b7fm8qx5ueim8" path="res://bala.tscn" id="2_0oqaj"]
+[ext_resource type="PackedScene" uid="uid://dvtne6vr0fiyu" path="res://momevi.tscn" id="3_n8q25"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32ee1"]
+size = Vector2(58, 66)
+
+[node name="player" type="CharacterBody2D"]
+editor_description = "xd
+"
+position = Vector2(0, 1)
+script = ExtResource("1_65mgm")
+aceleracion = 0
+bullet = ExtResource("2_0oqaj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -13)
+rotation = 1.58215
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4j2g4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(85, 75)
+shape = SubResource("RectangleShape2D_32ee1")
+
+[node name="momen" parent="." instance=ExtResource("3_n8q25")]

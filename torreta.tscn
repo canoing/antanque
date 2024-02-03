@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuu0xlxt3efs2"]
+
+[ext_resource type="Script" path="res://torreta.gd" id="1_duqgw"]
+[ext_resource type="Texture2D" path="res://Torreta.png" id="2_fxdwa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wplci"]
+size = Vector2(5, 9)
+
+[node name="torreta" type="CharacterBody2D"]
+script = ExtResource("1_duqgw")
+
+[node name="Torreta" type="Sprite2D" parent="."]
+position = Vector2(22, -1.90735e-06)
+rotation = 1.58371
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_fxdwa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(174.5, 29.5)
+shape = SubResource("RectangleShape2D_wplci")
