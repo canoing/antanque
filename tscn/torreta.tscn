@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cuu0xlxt3efs2"]
 
-[ext_resource type="Script" path="res://torreta.gd" id="1_duqgw"]
-[ext_resource type="Texture2D" path="res://Torreta.png" id="2_fxdwa"]
+[ext_resource type="Script" path="res://scrip/torreta.gd" id="1_duqgw"]
+[ext_resource type="Texture2D" uid="uid://dm71ophyq4bnb" path="res://sprit/Torreta.png" id="2_fxdwa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wplci"]
 size = Vector2(5, 9)

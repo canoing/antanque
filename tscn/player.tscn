@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bge31axkue8dy"]
 
-[ext_resource type="Texture2D" path="res://Cuerpo.png" id="1_4j2g4"]
-[ext_resource type="Script" path="res://player.gd" id="1_65mgm"]
-[ext_resource type="PackedScene" uid="uid://b33h7l3e6kmyb" path="res://bala.tscn" id="2_0oqaj"]
-[ext_resource type="PackedScene" path="res://momevi.tscn" id="3_n8q25"]
+[ext_resource type="Texture2D" uid="uid://yh44gjhv5nd1" path="res://sprit/Cuerpo.png" id="1_4j2g4"]
+[ext_resource type="Script" path="res://scrip/player.gd" id="1_65mgm"]
+[ext_resource type="PackedScene" uid="uid://b33h7l3e6kmyb" path="res://tscn/bala.tscn" id="2_0oqaj"]
+[ext_resource type="PackedScene" uid="uid://dvtne6vr0fiyu" path="res://tscn/momevi.tscn" id="3_n8q25"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32ee1"]
 size = Vector2(58, 66)

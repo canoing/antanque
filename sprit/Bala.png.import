@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8s4iymgbu5iq"
-path="res://.godot/imported/Torreta.png-f20b6c3f3257dc80a76a5b83af8ea450.ctex"
+uid="uid://dnwip5to00w4c"
+path="res://.godot/imported/Bala.png-f63787aeeee85b4923b34b7e4e03c27a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Torreta.png"
-dest_files=["res://.godot/imported/Torreta.png-f20b6c3f3257dc80a76a5b83af8ea450.ctex"]
+source_file="res://sprit/Bala.png"
+dest_files=["res://.godot/imported/Bala.png-f63787aeeee85b4923b34b7e4e03c27a.ctex"]
 
 [params]
 

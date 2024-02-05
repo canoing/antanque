@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqsle1jvyo2ce"
-path="res://.godot/imported/Bala.png-284c3dd30a040c0d6b1f573002617ff4.ctex"
+uid="uid://bskkkle6ki65c"
+path="res://.godot/imported/Mira.png-1769dc00ea8c8afe7bf4a751dd157779.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bala.png"
-dest_files=["res://.godot/imported/Bala.png-284c3dd30a040c0d6b1f573002617ff4.ctex"]
+source_file="res://sprit/Mira.png"
+dest_files=["res://.godot/imported/Mira.png-1769dc00ea8c8afe7bf4a751dd157779.ctex"]
 
 [params]
 

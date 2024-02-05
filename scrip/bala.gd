@@ -9,6 +9,6 @@ var direccion:Vector2
 func _physics_process(delta):
 	velocity = direccion * velocida
 	
-	print(velocity)
+	
 	move_and_slide()
 	

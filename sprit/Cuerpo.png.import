@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccvg2r25yg7bh"
-path="res://.godot/imported/Mira.png-a8da62fcf9a6f84836fd98b516ff2066.ctex"
+uid="uid://yh44gjhv5nd1"
+path="res://.godot/imported/Cuerpo.png-9c78a7002f087bb5f652a7dff1976b20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mira.png"
-dest_files=["res://.godot/imported/Mira.png-a8da62fcf9a6f84836fd98b516ff2066.ctex"]
+source_file="res://sprit/Cuerpo.png"
+dest_files=["res://.godot/imported/Cuerpo.png-9c78a7002f087bb5f652a7dff1976b20.ctex"]
 
 [params]
 

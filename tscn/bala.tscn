@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b33h7l3e6kmyb"]
+
+[ext_resource type="Texture2D" uid="uid://dnwip5to00w4c" path="res://sprit/Bala.png" id="1_ca47s"]
+[ext_resource type="Script" path="res://scrip/bala.gd" id="1_fek3f"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_plgy0"]
+a = Vector2(0, -1)
+b = Vector2(0, 2)
+
+[node name="bala" type="CharacterBody2D"]
+script = ExtResource("1_fek3f")
+velocida = 10
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ca47s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_plgy0")
