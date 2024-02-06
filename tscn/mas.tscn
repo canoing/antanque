@@ -1,12 +1,105 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyynwyo83651e"]
+[gd_scene load_steps=20 format=3 uid="uid://cyynwyo83651e"]
 
 [ext_resource type="PackedScene" uid="uid://bge31axkue8dy" path="res://tscn/player.tscn" id="1_y1yfs"]
 [ext_resource type="PackedScene" uid="uid://cuu0xlxt3efs2" path="res://tscn/torreta.tscn" id="2_bgt8m"]
 [ext_resource type="Texture2D" uid="uid://dm71ophyq4bnb" path="res://sprit/Torreta.png" id="3_c3ixa"]
 [ext_resource type="PackedScene" uid="uid://crvh6m0py4fgu" path="res://tscn/mira.tscn" id="4_812jd"]
+[ext_resource type="Texture2D" uid="uid://b18i3vceuyhew" path="res://sprit/Botón.png" id="4_843de"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85bj4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbaa4"]
+atlas = ExtResource("4_843de")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys25y"]
+atlas = ExtResource("4_843de")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fdtdt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbaa4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys25y")
+}],
+"loop": true,
+"name": &"arriba",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vet2o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8n4gv"]
+atlas = ExtResource("4_843de")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxib5"]
+atlas = ExtResource("4_843de")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8fnyu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8n4gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxib5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3dqd"]
+atlas = ExtResource("4_843de")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxhor"]
+atlas = ExtResource("4_843de")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eq83d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3dqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxhor")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yh65h"]
+atlas = ExtResource("4_843de")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8inr3"]
+atlas = ExtResource("4_843de")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_owv38"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yh65h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8inr3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="juego" type="Node2D"]
-position = Vector2(0, -1)
+position = Vector2(0, 2)
 
 [node name="player" parent="." instance=ExtResource("1_y1yfs")]
 position = Vector2(76, 86)
@@ -25,10 +118,94 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(39.9999, -0.000190735)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(4.00002, 1.99998)
+position = Vector2(-6.19888e-06, -0.999995)
 rotation = 1.57079
 zoom = Vector2(2, 2)
 
 [node name="Torreta" type="Sprite2D" parent="."]
 position = Vector2(153, 60)
 texture = ExtResource("3_c3ixa")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="controles" type="Node2D" parent="CanvasLayer"]
+position = Vector2(14, 121.5)
+
+[node name="arriba" type="TouchScreenButton" parent="CanvasLayer/controles"]
+position = Vector2(36, -21)
+scale = Vector2(32, 31)
+texture_normal = SubResource("AtlasTexture_85bj4")
+action = "up"
+
+[node name="si" type="AnimatedSprite2D" parent="CanvasLayer/controles/arriba"]
+modulate = Color(1, 1, 1, 0.498039)
+position = Vector2(0.5, 0.521169)
+scale = Vector2(0.03125, 0.03125)
+sprite_frames = SubResource("SpriteFrames_fdtdt")
+animation = &"arriba"
+
+[node name="abajo" type="TouchScreenButton" parent="CanvasLayer/controles"]
+position = Vector2(35, 14)
+scale = Vector2(32, 32)
+texture_normal = SubResource("AtlasTexture_vet2o")
+action = "down"
+
+[node name="no" type="AnimatedSprite2D" parent="CanvasLayer/controles/abajo"]
+modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(0.53125, 0.5)
+scale = Vector2(0.03125, 0.0322266)
+sprite_frames = SubResource("SpriteFrames_8fnyu")
+
+[node name="derrecha" type="TouchScreenButton" parent="CanvasLayer/controles"]
+position = Vector2(72, 14.5)
+scale = Vector2(32, 32)
+texture_normal = SubResource("AtlasTexture_vet2o")
+action = "right"
+
+[node name="aya" type="AnimatedSprite2D" parent="CanvasLayer/controles/derrecha"]
+modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(0.484375, 0.515625)
+scale = Vector2(0.0322266, 0.0307007)
+sprite_frames = SubResource("SpriteFrames_eq83d")
+
+[node name="izquierda" type="TouchScreenButton" parent="CanvasLayer/controles"]
+position = Vector2(-2, 14)
+scale = Vector2(32, 32)
+texture_normal = SubResource("AtlasTexture_vet2o")
+action = "left"
+
+[node name="aya" type="AnimatedSprite2D" parent="CanvasLayer/controles/izquierda"]
+modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(0.5625, 0.53125)
+scale = Vector2(0.0322266, 0.0307007)
+sprite_frames = SubResource("SpriteFrames_eq83d")
+flip_h = true
+
+[node name="izquierda torreta" type="TouchScreenButton" parent="CanvasLayer/controles"]
+modulate = Color(1, 1, 1, 0.498039)
+position = Vector2(196, 13.5)
+scale = Vector2(33.5, 32)
+texture_normal = SubResource("AtlasTexture_vet2o")
+action = "gr_iz"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/controles/izquierda torreta"]
+modulate = Color(1, 1, 1, 0.498039)
+position = Vector2(0.492537, 0.5)
+scale = Vector2(0.0307836, 0.0322266)
+sprite_frames = SubResource("SpriteFrames_owv38")
+
+[node name="derrecha torreta" type="TouchScreenButton" parent="CanvasLayer/controles"]
+modulate = Color(1, 1, 1, 0.498039)
+position = Vector2(239.5, 13.5)
+scale = Vector2(33.5, 32)
+texture_normal = SubResource("AtlasTexture_vet2o")
+action = "gr_de"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/controles/derrecha torreta"]
+modulate = Color(1, 1, 1, 0.498039)
+position = Vector2(0.462686, 0.484375)
+scale = Vector2(0.0307836, 0.0322266)
+sprite_frames = SubResource("SpriteFrames_owv38")
+flip_h = true

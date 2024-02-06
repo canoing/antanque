@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dm71ophyq4bnb" path="res://sprit/Torreta.png" id="2_fxdwa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wplci"]
-size = Vector2(5, 9)
+size = Vector2(4.125, 1)
 
 [node name="torreta" type="CharacterBody2D"]
 script = ExtResource("1_duqgw")
@@ -16,6 +16,5 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_fxdwa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(174.5, 29.5)
+position = Vector2(31.0625, 0)
 shape = SubResource("RectangleShape2D_wplci")

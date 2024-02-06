@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dvtne6vr0fiyu" path="res://tscn/momevi.tscn" id="3_n8q25"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32ee1"]
-size = Vector2(58, 66)
+size = Vector2(34, 27)
 
 [node name="player" type="CharacterBody2D"]
 editor_description = "xd
@@ -22,8 +22,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_4j2g4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(85, 75)
+position = Vector2(8, 0.5)
 shape = SubResource("RectangleShape2D_32ee1")
 
 [node name="momen" parent="." instance=ExtResource("3_n8q25")]
