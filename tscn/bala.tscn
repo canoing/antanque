@@ -9,10 +9,10 @@ a = Vector2(0, -1)
 b = Vector2(0, 2)
 
 [node name="bala" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 6
 script = ExtResource("1_fek3f")
 exploci = ExtResource("2_ahd5n")
-
-[node name="Area2D" type="Area2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ca47s")

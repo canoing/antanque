@@ -1,10 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://cyynwyo83651e"]
+[gd_scene load_steps=22 format=3 uid="uid://cyynwyo83651e"]
 
 [ext_resource type="PackedScene" uid="uid://bge31axkue8dy" path="res://tscn/player.tscn" id="1_y1yfs"]
 [ext_resource type="PackedScene" uid="uid://cuu0xlxt3efs2" path="res://tscn/torreta.tscn" id="2_bgt8m"]
 [ext_resource type="Texture2D" uid="uid://dm71ophyq4bnb" path="res://sprit/Torreta.png" id="3_c3ixa"]
 [ext_resource type="PackedScene" uid="uid://crvh6m0py4fgu" path="res://tscn/mira.tscn" id="4_812jd"]
 [ext_resource type="Texture2D" uid="uid://b18i3vceuyhew" path="res://sprit/Botón.png" id="4_843de"]
+[ext_resource type="Texture2D" uid="uid://ca7vcedsxhgv7" path="res://sprit/Ataque .png" id="6_tstyj"]
+[ext_resource type="Texture2D" uid="uid://di2ixceykbjch" path="res://sprit/Ataque_true.png" id="7_v0sg1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_85bj4"]
 
@@ -104,6 +106,9 @@ position = Vector2(0, 2)
 [node name="player" parent="." instance=ExtResource("1_y1yfs")]
 position = Vector2(76, 86)
 rotation = -1.57079
+collision_layer = 6
+collision_mask = 6
+aceleracion = 100
 
 [node name="torreta" parent="player" instance=ExtResource("2_bgt8m")]
 position = Vector2(-3.8147e-06, -1.90735e-06)
@@ -117,95 +122,99 @@ scale = Vector2(0.5, 0.5)
 [node name="spaw_bala" type="Marker2D" parent="player/torreta"]
 position = Vector2(39.9999, -0.000190735)
 
-[node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(-6.19888e-06, -0.999995)
-rotation = 1.57079
+[node name="Camera2D" type="Camera2D" parent="player/torreta"]
+process_mode = 1
+position = Vector2(33, 0.99979)
 zoom = Vector2(2, 2)
-
-[node name="Torreta" type="Sprite2D" parent="."]
-position = Vector2(153, 60)
-texture = ExtResource("3_c3ixa")
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
 
 [node name="controles" type="Node2D" parent="CanvasLayer"]
-position = Vector2(14, 121.5)
+position = Vector2(191, 263.5)
 
 [node name="arriba" type="TouchScreenButton" parent="CanvasLayer/controles"]
-position = Vector2(36, -21)
-scale = Vector2(32, 31)
+position = Vector2(-110, -51)
+scale = Vector2(71.5, 67.5)
 texture_normal = SubResource("AtlasTexture_85bj4")
 action = "up"
 
 [node name="si" type="AnimatedSprite2D" parent="CanvasLayer/controles/arriba"]
-modulate = Color(1, 1, 1, 0.498039)
 position = Vector2(0.5, 0.521169)
 scale = Vector2(0.03125, 0.03125)
 sprite_frames = SubResource("SpriteFrames_fdtdt")
 animation = &"arriba"
 
 [node name="abajo" type="TouchScreenButton" parent="CanvasLayer/controles"]
-position = Vector2(35, 14)
-scale = Vector2(32, 32)
+position = Vector2(-111.5, 28)
+scale = Vector2(67, 65.5)
 texture_normal = SubResource("AtlasTexture_vet2o")
 action = "down"
 
 [node name="no" type="AnimatedSprite2D" parent="CanvasLayer/controles/abajo"]
-modulate = Color(1, 1, 1, 0.501961)
 position = Vector2(0.53125, 0.5)
 scale = Vector2(0.03125, 0.0322266)
 sprite_frames = SubResource("SpriteFrames_8fnyu")
 
 [node name="derrecha" type="TouchScreenButton" parent="CanvasLayer/controles"]
-position = Vector2(72, 14.5)
-scale = Vector2(32, 32)
+position = Vector2(-33, 27.5)
+scale = Vector2(68.5, 67)
 texture_normal = SubResource("AtlasTexture_vet2o")
 action = "right"
 
 [node name="aya" type="AnimatedSprite2D" parent="CanvasLayer/controles/derrecha"]
-modulate = Color(1, 1, 1, 0.501961)
 position = Vector2(0.484375, 0.515625)
 scale = Vector2(0.0322266, 0.0307007)
 sprite_frames = SubResource("SpriteFrames_eq83d")
 
 [node name="izquierda" type="TouchScreenButton" parent="CanvasLayer/controles"]
-position = Vector2(-2, 14)
-scale = Vector2(32, 32)
+position = Vector2(-190, 26)
+scale = Vector2(66.5, 72)
 texture_normal = SubResource("AtlasTexture_vet2o")
 action = "left"
 
 [node name="aya" type="AnimatedSprite2D" parent="CanvasLayer/controles/izquierda"]
-modulate = Color(1, 1, 1, 0.501961)
 position = Vector2(0.5625, 0.53125)
 scale = Vector2(0.0322266, 0.0307007)
 sprite_frames = SubResource("SpriteFrames_eq83d")
 flip_h = true
 
 [node name="izquierda torreta" type="TouchScreenButton" parent="CanvasLayer/controles"]
-modulate = Color(1, 1, 1, 0.498039)
-position = Vector2(196, 13.5)
-scale = Vector2(33.5, 32)
+position = Vector2(424.5, 14)
+scale = Vector2(81, 74.5)
 texture_normal = SubResource("AtlasTexture_vet2o")
 action = "gr_iz"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/controles/izquierda torreta"]
-modulate = Color(1, 1, 1, 0.498039)
-position = Vector2(0.492537, 0.5)
+position = Vector2(0.462687, 0.484375)
 scale = Vector2(0.0307836, 0.0322266)
 sprite_frames = SubResource("SpriteFrames_owv38")
 
 [node name="derrecha torreta" type="TouchScreenButton" parent="CanvasLayer/controles"]
-modulate = Color(1, 1, 1, 0.498039)
-position = Vector2(239.5, 13.5)
-scale = Vector2(33.5, 32)
+position = Vector2(514, 12.5)
+scale = Vector2(79.0001, 76)
 texture_normal = SubResource("AtlasTexture_vet2o")
 action = "gr_de"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/controles/derrecha torreta"]
-modulate = Color(1, 1, 1, 0.498039)
-position = Vector2(0.462686, 0.484375)
+position = Vector2(0.507463, 0.5)
 scale = Vector2(0.0307836, 0.0322266)
 sprite_frames = SubResource("SpriteFrames_owv38")
 flip_h = true
+
+[node name="ataque" type="TouchScreenButton" parent="CanvasLayer/controles"]
+position = Vector2(514, -122)
+scale = Vector2(2.39063, 2.32813)
+texture_normal = ExtResource("6_tstyj")
+texture_pressed = ExtResource("7_v0sg1")
+action = "dispara"
+
+[node name="Torreta" type="Sprite2D" parent="."]
+position = Vector2(153, 60)
+texture = ExtResource("3_c3ixa")

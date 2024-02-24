@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlouuu3j2i5po"]
+
+[ext_resource type="Script" path="res://scrip/ia_fracesa.gd" id="1_qow32"]
+[ext_resource type="Texture2D" uid="uid://ddj2vhexo86vc" path="res://sprit/cuerpo_so.png" id="1_x2dgi"]
+[ext_resource type="PackedScene" uid="uid://ctdbv607t63t8" path="res://tscn/sensor.tscn" id="3_q8rbw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75fke"]
+size = Vector2(39, 32)
+
+[node name="IA_fracesa" type="CharacterBody2D"]
+collision_layer = 6
+collision_mask = 0
+platform_floor_layers = 4294967044
+script = ExtResource("1_qow32")
+aceleracion = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5, 1.16387e-10)
+rotation = 1.56905
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_x2dgi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 4
+position = Vector2(1.5, -1)
+shape = SubResource("RectangleShape2D_75fke")
+
+[node name="sensor" parent="." instance=ExtResource("3_q8rbw")]

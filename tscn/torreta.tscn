@@ -10,7 +10,7 @@ size = Vector2(4.125, 1)
 script = ExtResource("1_duqgw")
 
 [node name="Torreta" type="Sprite2D" parent="."]
-position = Vector2(22, -1.90735e-06)
+position = Vector2(24, 1.36424e-12)
 rotation = 1.58371
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_fxdwa")

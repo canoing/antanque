@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c03jpafnbffx3"]
+
+[ext_resource type="Script" path="res://scrip/zona_disparo.gd" id="1_t1fmy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_it5cu"]
+size = Vector2(266, 8)
+
+[node name="zona_disparo" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_t1fmy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(133, 0)
+shape = SubResource("RectangleShape2D_it5cu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

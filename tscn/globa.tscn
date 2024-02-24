@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjy2vswkq0sxn"]
+
+[ext_resource type="Script" path="res://globa.gd" id="1_15kxh"]
+
+[node name="globa" type="Node2D"]
+script = ExtResource("1_15kxh")

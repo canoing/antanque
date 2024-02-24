@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b51q3cacljn7l"]
+
+[ext_resource type="PackedScene" uid="uid://dlouuu3j2i5po" path="res://tscn/ia_fracesa.tscn" id="1_qtu1q"]
+[ext_resource type="PackedScene" uid="uid://cggjbxn8lcfpx" path="res://tscn/torreta_frase.tscn" id="2_0rq0p"]
+[ext_resource type="PackedScene" uid="uid://b33h7l3e6kmyb" path="res://tscn/bala.tscn" id="2_x52wl"]
+[ext_resource type="PackedScene" uid="uid://c03jpafnbffx3" path="res://tscn/zona_disparo.tscn" id="3_kr7js"]
+
+[node name="enemigos" type="Node2D"]
+
+[node name="IA_fracesa" parent="." instance=ExtResource("1_qtu1q")]
+bullet = ExtResource("2_x52wl")
+
+[node name="torreta_frase" parent="IA_fracesa" instance=ExtResource("2_0rq0p")]
+
+[node name="bala_ene" type="Marker2D" parent="IA_fracesa/torreta_frase"]
+position = Vector2(38, 0)
+
+[node name="zona_disparo" parent="IA_fracesa/torreta_frase" instance=ExtResource("3_kr7js")]
+position = Vector2(44, 1)
+
+[node name="mira" type="Marker2D" parent="IA_fracesa/torreta_frase/zona_disparo"]
+position = Vector2(156, -1)

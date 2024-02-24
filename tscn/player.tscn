@@ -12,10 +12,13 @@ size = Vector2(34, 27)
 editor_description = "xd
 "
 position = Vector2(0, 1)
+platform_floor_layers = 4294967042
 script = ExtResource("1_65mgm")
 bullet = ExtResource("2_0oqaj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
 position = Vector2(11, 0.999999)
 rotation = 1.58215
 scale = Vector2(0.5, 0.5)
