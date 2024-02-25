@@ -10,7 +10,7 @@ var dire_rota = 0
 @export var bullet:PackedScene
 @export var aceleracion = 60
 @onready var AnimatedSprite = $torreta/mira/AnimatedSprite2D
-func _physics_process(delta: float )-> void:
+func _physics_process(delta):
 #movimiento
 	rotation += dire_rota * velo_rotacion * delta
 	dire_rota = 0
@@ -22,15 +22,16 @@ func _physics_process(delta: float )-> void:
 	if Input.is_action_pressed("left"):
 		dire_rota -= 1
 		
+		
 	
 	if Input.is_action_pressed("up"):
-		velocity  = Vector2(aceleracion, 0).rotated(rotation)
+		velocity  = Vector2(aceleracion * delta, 0).rotated(rotation)
 		
 		
 		
 	if Input.is_action_pressed("down"):
 		
-		velocity  = Vector2(-aceleracion + 10, 0).rotated(rotation)
+		velocity  = Vector2(-aceleracion + 10 * delta, 0).rotated(rotation)
 		
 		
 		
